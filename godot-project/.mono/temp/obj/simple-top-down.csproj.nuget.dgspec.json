@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Files\\_Documents\\coding-dir\\godot\\simple-top-down\\godot-project\\simple-top-down.csproj": {}
+  },
+  "projects": {
+    "C:\\Files\\_Documents\\coding-dir\\godot\\simple-top-down\\godot-project\\simple-top-down.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Files\\_Documents\\coding-dir\\godot\\simple-top-down\\godot-project\\simple-top-down.csproj",
+        "projectName": "simple-top-down",
+        "projectPath": "C:\\Files\\_Documents\\coding-dir\\godot\\simple-top-down\\godot-project\\simple-top-down.csproj",
+        "packagesPath": "C:\\Users\\phdhy\\.nuget\\packages\\",
+        "outputPath": "C:\\Files\\_Documents\\coding-dir\\godot\\simple-top-down\\godot-project\\.mono\\temp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Users\\phdhy\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\phdhy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\phdhy\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

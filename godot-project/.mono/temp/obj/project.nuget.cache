@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3bDKA/xhz7UF4DDKyt06QO8YBORB7P9wE8oA2kwTp1RWFoPoQkudZO4+7EuwazKaWOcIf1qqEqZj/GlvcFz1pg==",
+  "success": true,
+  "projectFilePath": "C:\\Files\\_Documents\\coding-dir\\godot\\simple-top-down\\godot-project\\simple-top-down.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\phdhy\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\phdhy\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
