@@ -18,6 +18,10 @@ polygon = PoolVector2Array( -16, 0, 0, -16, 16, 0, 16, 8, -16, 8 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )
 
+[node name="Turret" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
@@ -29,7 +33,3 @@ script = ExtResource( 3 )
 
 [node name="Move" type="Node" parent="StateManager"]
 script = ExtResource( 4 )
-
-[node name="Turret" type="Sprite" parent="."]
-texture = ExtResource( 6 )
-script = ExtResource( 7 )
