@@ -18,7 +18,8 @@
 
 ## Need research
 - Learn about `Transform2d` https://docs.godotengine.org/en/3.5/tutorials/math/matrices_and_transforms.html
-    - Learn about `vector math` https://docs.godotengine.org/en/3.5/tutorials/math/vector_math.html#doc-vector-math
+    - Interesting looking [article](https://www.alanzucconi.com/2016/02/10/tranfsormation-matrix/)
+- Learn about `vector math` https://docs.godotengine.org/en/3.5/tutorials/math/vector_math.html#doc-vector-math
 - Cast ray to mouse position
 - Create a menu
 - Singletons
@@ -30,6 +31,8 @@
 ## Things learned
 - Art, at least 2d, default facing is to the right. If your import is facing "up" all code will be rotated 90'
     - If you're desired behavior is off by 90', you are on the wrong axis #basic algebra
+    - [Article](https://www.alanzucconi.com/2016/02/03/2d-rotations/) says sine and cosine are the same function, only shifted 90'
+        - Sin crosses (0, 0) and (pi, 0) while cosine crosses (1pi/2, 0) and (3pi/2, 0)
     - To change axis in code 2 options
         - Rotating relevant vector `.Rotated(Mathf.Pi*0.5f)`
         - Changing relevant vector to `_vector = (-_vector.y, _vector.x)`

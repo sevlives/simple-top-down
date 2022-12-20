@@ -22,3 +22,15 @@ namespace SimpleTopDown.Assets.Player
         }
     }
 }
+
+//* ChatGPT provided this
+// Get the global mouse position
+// Vector2 mousePosition = GetViewport().GetMousePosition();
+
+// // Calculate the angle between the object and the mouse position
+// float angle = Mathf.Atan2(mousePosition.y - GlobalPosition.y, mousePosition.x - GlobalPosition.x);
+
+// // Rotate the object towards the mouse position
+// Transform2D rot = new Transform2D();
+// rot.Rotate(Mathf.Lerp(Rotation, angle, Mathf.Clamp(rotationSpeed * delta, 0, 1)));
+// Transform = rot * Transform;
