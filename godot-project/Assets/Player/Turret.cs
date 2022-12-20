@@ -8,7 +8,7 @@ public class Turret : Sprite
     public override void _PhysicsProcess(float delta)
     {
         _mousePosition = GetGlobalMousePosition();
-        // Rotated() used due to incorret image importing, thus rotated 90' clockwise
+        // Rotated() used due to incorret image importing, thus needs to be rotated 90' clockwise
         Vector2 _vector = (_mousePosition - GlobalPosition).Rotated(Mathf.Pi*.5f);
         float _angle = _vector.Angle();
         float _rotation = GlobalRotation;
