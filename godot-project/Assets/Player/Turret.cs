@@ -7,7 +7,7 @@ namespace SimpleTopDown.Assets.Player
     {
         private Vector2 _mousePosition;
         private float _rotateSpeed = 1.7f;
-        public override void _PhysicsProcess(float delta)
+        public void DoPhysics(float delta)
         {
             _mousePosition = GetGlobalMousePosition();
             // Rotated() used due to incorret image importing, thus needs to be rotated 90' clockwise

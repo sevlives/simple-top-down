@@ -9,25 +9,28 @@ namespace SimpleTopDown.Assets.Player
         public Vector2 Velocity {get; set;}
         //! fields for physics math
         // public AnimatedSprite AnimSprite {get; set;}
-        private StateManager _states;
+        private StateManager States;
+        private Turret Turret;
 
         public override void _Ready()
         {
             // AnimSprite = GetNode<AnimatedSprite>("Animated Sprite");
-            _states = GetNode<StateManager>("StateManager");
+            States = GetNode<StateManager>("StateManager");
+            Turret = GetNode<Turret>("Turret");
             // AnimSprite.Playing = true;
-            _states.Init(this);
+            States.Init(this);
         }
         // public override void _Process(float delta)
         // {
         // }
         public override void _UnhandledInput(InputEvent @event)
         {
-            _states.ManageInput(@event);
+            States.ManageInput(@event);
         }
         public override void _PhysicsProcess(float delta)
         {
-            _states.ManagePhysics(delta);
+            States.ManagePhysics(delta);
+            Turret.DoPhysics(delta);
         }
     }
 }

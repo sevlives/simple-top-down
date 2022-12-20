@@ -1,6 +1,7 @@
 # List of things so I don't forget
 
 ## TODO
+- [ ] Learn how to merge *correctly* in git bash
 - [ ] Background image
 - [ ] Enemies
     - [ ] Enemy movement
@@ -19,7 +20,6 @@
 - Learn about `Transform2d` https://docs.godotengine.org/en/3.5/tutorials/math/matrices_and_transforms.html
     - Learn about `vector math` https://docs.godotengine.org/en/3.5/tutorials/math/vector_math.html#doc-vector-math
 - Cast ray to mouse position
-    - Track turret with ray
 - Create a menu
 - Singletons
     - Only every one instance of that class during the apps run time
