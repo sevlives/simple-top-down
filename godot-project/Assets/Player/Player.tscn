@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Player/Player.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Player/States/StateManager.cs" type="Script" id=2]
 [ext_resource path="res://Assets/Player/States/Idle.cs" type="Script" id=3]
 [ext_resource path="res://Assets/Player/States/Move.cs" type="Script" id=4]
 [ext_resource path="res://Assets/Player/Sprite-0002.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/turret-proto.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/Turret.cs" type="Script" id=7]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -15,6 +17,10 @@ polygon = PoolVector2Array( -16, 0, 0, -16, 16, 0, 16, 8, -16, 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )
+
+[node name="Turret" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
