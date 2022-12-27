@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ControllerDebug.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/PauseScreen.tscn" type="PackedScene" id=2]
+
+[node name="Game" type="Node"]
+
+[node name="World" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="PauseScreen" parent="Menu" instance=ExtResource( 2 )]
+visible = false
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Characters" type="CanvasLayer" parent="."]
+
+[node name="ControllerDebug" parent="Characters" instance=ExtResource( 1 )]
