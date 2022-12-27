@@ -31,7 +31,7 @@
 
 ## Bugs/ Issues
 - [x] Turret refuses to rotate when mouse is opposite of active tank rotation in a 180' arc
-    - Made tank body and turret sibling nodes, thus decoupling a parent / child relationship in rotation
+    - Made tank body and turret sibling nodes, thus decoupling parent / child relationship in rotation
 
 ## Critically read code I don't understand
 - Ui.DebugOverlay
