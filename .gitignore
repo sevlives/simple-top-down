@@ -1,2 +1,2 @@
 # Mono specific ignores
-.mono/
+godot-project/.mono/
