@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tank32.png-764652c7c9d38bb0d481d9f666022fc0.stex"
+path="res://.import/tank32.png-088d267420cfe2ffe47f34051429e767.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Debug/tank32.png"
-dest_files=[ "res://.import/tank32.png-764652c7c9d38bb0d481d9f666022fc0.stex" ]
+source_file="res://assets/debug/tank32.png"
+dest_files=[ "res://.import/tank32.png-088d267420cfe2ffe47f34051429e767.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow2.png-7fe663f17a12856c8ff2622e233aefea.stex"
+path="res://.import/turret_reticle.png-7a4da5a3553f62cb8ccee35ad2fdbd00.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Debug/arrow2.png"
-dest_files=[ "res://.import/arrow2.png-7fe663f17a12856c8ff2622e233aefea.stex" ]
+source_file="res://assets/debug/turret_reticle.png"
+dest_files=[ "res://.import/turret_reticle.png-7a4da5a3553f62cb8ccee35ad2fdbd00.stex" ]
 
 [params]
 

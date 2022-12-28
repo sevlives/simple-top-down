@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tank-proto.png-7c8dd26a574f904ef2781a7cec64c6ec.stex"
+path="res://.import/HeePxbe.jpg-86b1f0a8d45409dd04cfa4f8e5055e94.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tank-proto.png"
-dest_files=[ "res://.import/tank-proto.png-7c8dd26a574f904ef2781a7cec64c6ec.stex" ]
+source_file="res://assets/HeePxbe.jpg"
+dest_files=[ "res://.import/HeePxbe.jpg-86b1f0a8d45409dd04cfa4f8e5055e94.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

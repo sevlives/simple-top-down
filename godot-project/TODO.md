@@ -5,7 +5,11 @@
 - [ ] Background image
 - Player
     - [ ] Add Lerp, acceleration and friction to forward and backward movement
+        - [ ] Consider adding cruise control, where tapping forward/ backward allows auto-speed in intervals of gears
+            - [ ] If added allow setting to be changed
     - [x] Turret that follows mouse, but slowly
+    - [x] Add turret reticle (acts funny)
+        - [ ] Try using Lerp for changing `reticleOffset`
 - Enemies
     - [ ] Enemy movement
     - [ ] Enemies track targets
@@ -16,7 +20,7 @@
     - [ ] Do damage
 - Basic UI
     - [ ] Health/ damage system
-    - [ ] Target reticle that follows raycast from turret to show turret heading
+    - [ ] Some kind of score system
 - Pause Menu
     - [x] ~~Add script to program GRatio into MarginContainers~~ *Used `CenterContainers` instead*
     - [x] When opened centered in Camera
@@ -32,6 +36,7 @@
 ## Bugs/ Issues
 - [x] Turret refuses to rotate when mouse is opposite of active tank rotation in a 180' arc
     - Made tank body and turret sibling nodes, thus decoupling parent / child relationship in rotation
+- [ ] Turret reticle acts funny be instantly changing offset
 
 ## Critically read code I don't understand
 - Ui.DebugOverlay
