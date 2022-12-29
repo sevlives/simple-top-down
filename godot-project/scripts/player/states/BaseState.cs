@@ -25,14 +25,14 @@ namespace SimpleTopDown.Scripts.Player.States
         public void Exit()
         {}
         
-        public virtual AnimationState DoInput(InputEvent @event)
+        public virtual MovementState DoInput(InputEvent @event)
         {
-            return AnimationState.Null;
+            return MovementState.Null;
         }
         
-        public virtual AnimationState DoPhysics(float delta)
+        public virtual MovementState DoPhysics(float delta)
         {
-            return AnimationState.Null;
+            return MovementState.Null;
         }
     }
 }

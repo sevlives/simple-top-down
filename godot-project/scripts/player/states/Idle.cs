@@ -5,21 +5,21 @@ namespace SimpleTopDown.Scripts.Player.States
 {
     public class Idle : BaseState
     {
-        public override AnimationState DoInput(InputEvent @event)
+        public override MovementState DoInput(InputEvent @event)
         {
             if (Input.IsActionPressed("turn_left")
             | Input.IsActionPressed("turn_right")
             | Input.IsActionPressed("forward")
             | Input.IsActionPressed("backward"))
             {
-                return AnimationState.Move;
+                return MovementState.Move;
             }
-            return AnimationState.Null;
+            return MovementState.Null;
         }
         
-        public override AnimationState DoPhysics(float delta)
+        public override MovementState DoPhysics(float delta)
         {
-            return AnimationState.Null;
+            return MovementState.Null;
         }
     }
 }
