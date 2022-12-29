@@ -8,7 +8,7 @@ namespace SimpleTopDown.Scripts.Debug
         private Sprite _arrow;
         private Vector2 _arrowOffset = new Vector2(30, 0);
         private Sprite _reticle;
-        private const float _rotateSpeed = .9f;
+        private const float _traverseSpeed = 1.1f;
         private float _angle;
         // debug property
         public string Angle
@@ -29,7 +29,7 @@ namespace SimpleTopDown.Scripts.Debug
             Vector2 vector = mousePosition - GlobalPosition;
             _angle = vector.Angle();
             float rotation = GlobalRotation;
-            float angleDelta = _rotateSpeed * delta;
+            float angleDelta = _traverseSpeed * delta;
             _angle = Mathf.LerpAngle(rotation, _angle, 1f);
             _angle = Mathf.Clamp(_angle, rotation - angleDelta, rotation + angleDelta);
             GlobalRotation = _angle;

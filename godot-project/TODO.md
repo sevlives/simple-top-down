@@ -1,7 +1,7 @@
 # TODO
 - [x] Pick a project architecture - *Using hierarchical structure*
     - [ ] Stick with it
-- [ ] Learn how to merge *correctly* in git bash
+- [x] Learn how to merge *correctly* in git bash
 - [ ] Background image
 - Player
     - [ ] Add Lerp, acceleration and friction to forward and backward movement
@@ -9,7 +9,7 @@
             - [ ] If added allow setting to be changed
     - [x] Turret that follows mouse, but slowly
     - [x] Add turret reticle (acts funny)
-        - [ ] Try using Lerp for changing `reticleOffset`
+        - [x] Try using Lerp for changing `reticleOffset`
 - Enemies
     - [ ] Enemy movement
     - [ ] Enemies track targets
@@ -18,6 +18,14 @@
     - [ ] Draw a curved line (the tethers)
     - [ ] Characters can fire projectiles
     - [ ] Do damage
+- Weapons
+    - [ ] Silly string elemental
+        - [ ] Use Path2D node for collision with `Intersects()` and `Extends()`
+        - [ ] Create Path2D with sin wave
+    - [ ] Scythe 
+    - [ ] Rocket Hammer
+    - [ ] Windmill Shuriken
+    - [ ] Harpoon
 - Basic UI
     - [ ] Health/ damage system
     - [ ] Some kind of score system
@@ -36,7 +44,7 @@
 ## Bugs/ Issues
 - [x] Turret refuses to rotate when mouse is opposite of active tank rotation in a 180' arc
     - Made tank body and turret sibling nodes, thus decoupling parent / child relationship in rotation
-- [ ] Turret reticle acts funny be instantly changing offset
+- [x] Turret reticle acts funny be instantly changing offset
 
 ## Critically read code I don't understand
 - Ui.DebugOverlay
@@ -72,6 +80,7 @@
 - `Lerp()` = `from` + (`to`-`from`) * `weight`(range 0-1)
     - Use `LerpAngle()` for liner interpolation of angles
 - Can draw child behind parent in Inspector by changing `Visibility`
+- `Offset` is from center of parent node, while `Position` is not centered though similar
 - __UI Nodes__
     - Control as root (vs CanvasLayer)
         - You can't adjust anchors for children of containers, suggest using `CenterContainers` / others to achieve needs

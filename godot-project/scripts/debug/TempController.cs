@@ -6,7 +6,7 @@ namespace SimpleTopDown.Scripts.Debug
     public class TempController : KinematicBody2D
     {
         private Vector2 _rotateDirection;
-        private const float _rotateSpeed = 1.8f;
+        private const float _rotateSpeed = 1.6f;
         private const float _moveSpeed = 6500f;
         private TurretDirection _turret;
         private Position2D _pivot;
