@@ -34,8 +34,9 @@
     - [x] When opened centered in Camera
     - [x] When active toggle between mouse cursors
     - [ ] Working buttons
-        - [ ] Close game
+        - [x] Close game
         - [ ] Return to title
+    - [ ] Scene transitions
 - Debug
     - [x] Create direction visualizer scene
 - Global Members
@@ -50,6 +51,7 @@
 
 ## Critically read code I don't understand
 - Ui.DebugOverlay
+- Signals in general [YT video](https://www.youtube.com/watch?v=RjVel3Ms9wo)
 
 # Things learned in Godot / game engines
 - FileSystem if finnicky
