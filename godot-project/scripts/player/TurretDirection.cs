@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace SimpleTopDown.Scripts.Debug
+namespace SimpleTopDown.Scripts.Player
 {
     public class TurretDirection : Position2D
     {

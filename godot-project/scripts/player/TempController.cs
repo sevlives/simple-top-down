@@ -1,7 +1,8 @@
 using Godot;
 using System;
+using SimpleTopDown.Scripts.Debug;
 
-namespace SimpleTopDown.Scripts.Debug
+namespace SimpleTopDown.Scripts.Player
 {
     public class TempController : KinematicBody2D
     {
