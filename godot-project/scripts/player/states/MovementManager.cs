@@ -4,55 +4,59 @@ using System.Collections.Generic;
 
 namespace SimpleTopDown.Scripts.Player.States
 {
-    public class StateManager : Node
+    public class MovementManager : Node
     {
         private BaseState _currentState;
-        private Dictionary<AnimationState, BaseState> _states;
-        public string DebugState {get;set;}
+        private Dictionary<MovementState, BaseState> _moveStates;
+        public string DebugState {get; set;}
+
         public override void _Ready()
         {
-            _states = new Dictionary<AnimationState, BaseState>()
+            _moveStates = new Dictionary<MovementState, BaseState>()
             {
-                [AnimationState.Idle] = (BaseState)GetNode<Node>("Idle"),
-                [AnimationState.Move] = (BaseState)GetNode<Node>("Move"),
+                [MovementState.Idle] = (BaseState)GetNode<Node>("Idle"),
+                [MovementState.Move] = (BaseState)GetNode<Node>("Move"),
             };
         }
-        private void ChangeState(AnimationState newState)
+
+        private void ChangeState(MovementState newState)
         {
             if (_currentState != null)
             {
                 _currentState.Exit();
             }
-            _currentState = _states[newState];
+            _currentState = _moveStates[newState];
             _currentState.Enter();
             DebugState = newState.ToString();
-            
         }
-        public void Init(PlayerController Player)
+
+        public void Init(TempController player)
         {
             foreach (var child in GetChildren())
             {
                 var state = child as BaseState;
                 if (state == null) continue;
-                state.Player = Player;
+                state.Player = player;
             }
-            ChangeState(AnimationState.Idle);
+            ChangeState(MovementState.Idle);
         }
+
         public void ManageInput(InputEvent @event)
         {
-            AnimationState newState = _currentState.DoInput(@event);
-            if (newState != AnimationState.Null)
+            MovementState newState = _currentState.DoInput(@event);
+            if (newState != MovementState.Null)
             {
                 ChangeState(newState);
             }
         }
+
         public void ManagePhysics(float delta)
         {
-            AnimationState newState = _currentState.DoPhysics(delta);
-            if (newState != AnimationState.Null)
+            MovementState newState = _currentState.DoPhysics(delta);
+            if (newState != MovementState.Null)
             {
                 ChangeState(newState);
             }
         }
-    }
+    }    
 }

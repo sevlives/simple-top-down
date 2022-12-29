@@ -1,15 +1,15 @@
 # TODO
 - [x] Pick a project architecture - *Using hierarchical structure*
     - [ ] Stick with it
-- [ ] Learn how to merge *correctly* in git bash
+- [x] Learn how to merge *correctly* in git bash
 - [ ] Background image
 - Player
     - [ ] Add Lerp, acceleration and friction to forward and backward movement
         - [ ] Consider adding cruise control, where tapping forward/ backward allows auto-speed in intervals of gears
             - [ ] If added allow setting to be changed
     - [x] Turret that follows mouse, but slowly
-    - [x] Add turret reticle (acts funny)
-        - [ ] Try using Lerp for changing `reticleOffset`
+    - [x] Add turret reticle
+        - [x] Try using Lerp for changing `reticleOffset`
 - Enemies
     - [ ] Enemy movement
     - [ ] Enemies track targets
@@ -18,6 +18,14 @@
     - [ ] Draw a curved line (the tethers)
     - [ ] Characters can fire projectiles
     - [ ] Do damage
+- Weapons
+    - [ ] Silly string elemental
+        - [ ] Use Path2D node for collision with `Intersects()` and `Extends()`
+        - [ ] Create Path2D with sin wave
+    - [ ] Scythe 
+    - [ ] Rocket Hammer
+    - [ ] Windmill Shuriken
+    - [ ] Harpoon
 - Basic UI
     - [ ] Health/ damage system
     - [ ] Some kind of score system
@@ -36,12 +44,16 @@
 ## Bugs/ Issues
 - [x] Turret refuses to rotate when mouse is opposite of active tank rotation in a 180' arc
     - Made tank body and turret sibling nodes, thus decoupling parent / child relationship in rotation
-- [ ] Turret reticle acts funny be instantly changing offset
+- [x] Turret reticle acts funny be instantly changing offset
+- [ ] Turret reticle needs to not rotate, always appear the same shape/ orientation
+- [ ] In Godot discord `@crazykid1148#8693` mentions unintend mouse movement matching fps because it was called in _Process() instead of _Input, check if similar issue
 
 ## Critically read code I don't understand
 - Ui.DebugOverlay
 
 # Things learned in Godot / game engines
+- FileSystem if finnicky
+    - In order to move scripts between dir, you must detach script from relevant scene(s) otherwise changes will revert
 - `_Process()` vs `_PhysicsProcess()` (and `_UnhandledInput()`) - [YT video](https://www.youtube.com/watch?v=UrbcDJFLPc0)
     - `_Process()` happens as fast as Godot can render
         - Data processing jobs, non-display, non-timing
@@ -72,6 +84,7 @@
 - `Lerp()` = `from` + (`to`-`from`) * `weight`(range 0-1)
     - Use `LerpAngle()` for liner interpolation of angles
 - Can draw child behind parent in Inspector by changing `Visibility`
+- `Offset` is from center of parent node, while `Position` is not centered though similar
 - __UI Nodes__
     - Control as root (vs CanvasLayer)
         - You can't adjust anchors for children of containers, suggest using `CenterContainers` / others to achieve needs

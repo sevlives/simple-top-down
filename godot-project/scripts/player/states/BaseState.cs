@@ -7,8 +7,8 @@ namespace SimpleTopDown.Scripts.Player.States
     {
         // [Export]
         // public string animationName {get; set;} //this is set in editor for each node
-        private PlayerController _player;
-        public PlayerController Player
+        private TempController _player;
+        public TempController Player
         {
             get => _player;
             set
@@ -21,15 +21,18 @@ namespace SimpleTopDown.Scripts.Player.States
         {
             // Player.AnimSprite.Play(animationName);
         }
+        
         public void Exit()
         {}
-        public virtual AnimationState DoInput(InputEvent @event)
+        
+        public virtual MovementState DoInput(InputEvent @event)
         {
-            return AnimationState.Null;
+            return MovementState.Null;
         }
-        public virtual AnimationState DoPhysics(float delta)
+        
+        public virtual MovementState DoPhysics(float delta)
         {
-            return AnimationState.Null;
+            return MovementState.Null;
         }
     }
 }
