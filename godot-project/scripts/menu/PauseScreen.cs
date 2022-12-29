@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace SimpleTopDown.Scripts
+namespace SimpleTopDown.Scripts.Menu
 {
     public class PauseScreen : Control
     {
