@@ -14,9 +14,10 @@ namespace SimpleTopDown.Scripts.Debug
 
         public override void _Ready()
         {
-            _turret = GetNode<TurretDirection>("TurretDirection");
-            _pivot = GetNode<Position2D>("Pivot");
-            _overlay = GetNode<DebugOverlay>("DebugOverlay");
+            _turret = GetNode<TurretDirection>      ("TurretDirection");
+            _pivot = GetNode<Position2D>            ("Pivot");
+            _overlay = GetNode<DebugOverlay>        ("DebugOverlay");
+            
             _overlay.AddStat("Rotation", GetNode<Position2D>("TurretDirection"), "Angle", false);
         }
         

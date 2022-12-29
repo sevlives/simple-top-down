@@ -11,6 +11,7 @@ namespace SimpleTopDown.Scripts.Debug
         public override void _Ready()
         {
             _arrow = GetNode<Sprite>    ("Arrow");
+            
             _arrow.Offset = _arrowOffset;
         }
 
