@@ -7,8 +7,8 @@ namespace SimpleTopDown.Scripts.Player.States
     {
         // [Export]
         // public string animationName {get; set;} //this is set in editor for each node
-        private PlayerController _player;
-        public PlayerController Player
+        private TempController _player;
+        public TempController Player
         {
             get => _player;
             set

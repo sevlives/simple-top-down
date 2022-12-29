@@ -51,6 +51,8 @@
 - Ui.DebugOverlay
 
 # Things learned in Godot / game engines
+- FileSystem if finnicky
+    - In order to move scripts between dir, you must detach script from relevant scene(s) otherwise changes will revert
 - `_Process()` vs `_PhysicsProcess()` (and `_UnhandledInput()`) - [YT video](https://www.youtube.com/watch?v=UrbcDJFLPc0)
     - `_Process()` happens as fast as Godot can render
         - Data processing jobs, non-display, non-timing

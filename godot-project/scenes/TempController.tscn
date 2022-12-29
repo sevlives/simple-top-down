@@ -31,8 +31,8 @@ offset = Vector2( 30, 0 )
 visible = false
 polygon = PoolVector2Array( 14, 0, -7, -14, -14, -11, -7, 0, -14, 11, -7, 14 )
 
-[node name="StateManager" type="Node" parent="."]
+[node name="MovementManager" type="Node" parent="."]
 
-[node name="Idle" type="Node" parent="StateManager"]
+[node name="Idle" type="Node" parent="MovementManager"]
 
-[node name="Move" type="Node" parent="StateManager"]
+[node name="Move" type="Node" parent="MovementManager"]
