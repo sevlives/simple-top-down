@@ -7,14 +7,14 @@ namespace SimpleTopDown.Scripts.Player
 {
     public class TempController : KinematicBody2D
     {
-        private TurretController _turret;
+        private TurretDirection _turret;
         public Position2D Pivot {get; private set;}
         private DebugOverlay _overlay;
         private MovementManager _moveManager;
 
         public override void _Ready()
         {
-            _turret = GetNode<TurretController>          ("TurretDirection");
+            _turret = GetNode<TurretDirection>          ("TurretDirection");
             Pivot = GetNode<Position2D>                 ("Pivot");
             _overlay = GetNode<DebugOverlay>            ("DebugOverlay");
             _moveManager = GetNode<MovementManager>     ("MovementManager");
