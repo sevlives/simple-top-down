@@ -1,9 +1,0 @@
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\bin\Debug\simple-top-down.dll
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\bin\Debug\simple-top-down.pdb
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\obj\Debug\simple-top-down.csproj.AssemblyReference.cache
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\obj\Debug\simple-top-down.GeneratedMSBuildEditorConfig.editorconfig
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\obj\Debug\simple-top-down.AssemblyInfoInputs.cache
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\obj\Debug\simple-top-down.AssemblyInfo.cs
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\obj\Debug\simple-top-down.csproj.CoreCompileInputs.cache
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\obj\Debug\simple-top-down.dll
-C:\Files\_Documents\coding-dir\godot\simple-top-down\godot-project\.mono\temp\obj\Debug\simple-top-down.pdb
