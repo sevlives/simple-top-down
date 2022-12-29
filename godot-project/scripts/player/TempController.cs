@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using SimpleTopDown.Scripts.Player.States;
 using SimpleTopDown.Scripts.Debug;
 
 namespace SimpleTopDown.Scripts.Player
@@ -10,16 +11,19 @@ namespace SimpleTopDown.Scripts.Player
         private const float _rotateSpeed = 1.6f;
         private const float _moveSpeed = 6500f;
         private TurretDirection _turret;
-        private Position2D _pivot;
+        public Position2D Pivot;
         private DebugOverlay _overlay;
+        private MovementManager _moveManager;
 
         public override void _Ready()
         {
-            _turret = GetNode<TurretDirection>      ("TurretDirection");
-            _pivot = GetNode<Position2D>            ("Pivot");
-            _overlay = GetNode<DebugOverlay>        ("DebugOverlay");
+            _turret = GetNode<TurretDirection>          ("TurretDirection");
+            Pivot = GetNode<Position2D>                 ("Pivot");
+            _overlay = GetNode<DebugOverlay>            ("DebugOverlay");
+            _moveManager = GetNode<MovementManager>     ("MovementManager");
             
             _overlay.AddStat("Rotation", GetNode<Position2D>("TurretDirection"), "Angle", false);
+            _moveManager.Init(this);
         }
         
         public override void _Process(float delta)
@@ -30,18 +34,7 @@ namespace SimpleTopDown.Scripts.Player
         public override void _PhysicsProcess(float delta)
         {
             _turret.DoPhysics(delta, GetGlobalMousePosition());
-
-            _rotateDirection.y = (
-                Input.GetActionStrength("turn_right")
-                - Input.GetActionStrength("turn_left"));
-            _pivot.GlobalRotation += _rotateDirection.y * _rotateSpeed * delta;
-
-            float moveDirection = (
-                Input.GetActionStrength("forward")
-                - Input.GetActionStrength("backward"));
-            var xCord = moveDirection * _moveSpeed * delta;
-            var velocity = new Vector2(xCord, 0).Rotated(_pivot.Rotation);
-            MoveAndSlide(velocity);
+            _moveManager.ManagePhysics(delta);
         }
     }
 }

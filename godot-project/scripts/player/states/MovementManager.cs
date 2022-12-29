@@ -7,11 +7,11 @@ namespace SimpleTopDown.Scripts.Player.States
     public class MovementManager : Node
     {
         private BaseState _currentState;
-        private Dictionary<MovementState, BaseState> _states;
+        private Dictionary<MovementState, BaseState> _moveStates;
 
         public override void _Ready()
         {
-            _states = new Dictionary<MovementState, BaseState>()
+            _moveStates = new Dictionary<MovementState, BaseState>()
             {
                 [MovementState.Idle] = (BaseState)GetNode<Node>("Idle"),
                 [MovementState.Move] = (BaseState)GetNode<Node>("Move"),
@@ -24,11 +24,11 @@ namespace SimpleTopDown.Scripts.Player.States
             {
                 _currentState.Exit();
             }
-            _currentState = _states[newState];
+            _currentState = _moveStates[newState];
             _currentState.Enter();
         }
 
-        private void Init(TempController player)
+        public void Init(TempController player)
         {
             foreach (var child in GetChildren())
             {
@@ -39,7 +39,7 @@ namespace SimpleTopDown.Scripts.Player.States
             ChangeState(MovementState.Idle);
         }
 
-        private void ManageInput(InputEvent @event)
+        public void ManageInput(InputEvent @event)
         {
             MovementState newState = _currentState.DoInput(@event);
             if (newState != MovementState.Null)
@@ -48,7 +48,7 @@ namespace SimpleTopDown.Scripts.Player.States
             }
         }
 
-        private void ManagePhysics(float delta)
+        public void ManagePhysics(float delta)
         {
             MovementState newState = _currentState.DoPhysics(delta);
             if (newState != MovementState.Null)
