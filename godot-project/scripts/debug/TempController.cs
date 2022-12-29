@@ -27,7 +27,7 @@ namespace SimpleTopDown.Scripts.Debug
         
         public override void _PhysicsProcess(float delta)
         {
-            _turret.DoPhysics(delta);
+            _turret.DoPhysics(delta, GetGlobalMousePosition());
 
             _rotateDirection.y = (
                 Input.GetActionStrength("turn_right")

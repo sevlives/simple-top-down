@@ -9,6 +9,7 @@ namespace SimpleTopDown.Scripts.Debug
         private Vector2 _arrowOffset = new Vector2(30, 0);
         private Sprite _reticle;
         private const float _traverseSpeed = 1.1f;
+        private const float _elevationSpeed = .3f;
         private float _angle;
         // debug property
         public string Angle
@@ -24,16 +25,15 @@ namespace SimpleTopDown.Scripts.Debug
             _arrow.Offset = _arrowOffset;
         }
         
-        public void DoPhysics(float delta)
+        public void DoPhysics(float delta, Vector2 globalMouse)
         {
-            MoveTurretArrow(delta);
-            MoveTurretReticle();
+            MoveTurretArrow(delta, globalMouse);
+            MoveTurretReticle(globalMouse);
         }
         
-        private void MoveTurretArrow(float delta)
+        private void MoveTurretArrow(float delta, Vector2 globalMouse)
         {
-            Vector2 mousePosition = GetGlobalMousePosition();
-            Vector2 vector = mousePosition - GlobalPosition;
+            Vector2 vector = globalMouse - GlobalPosition;
             _angle = vector.Angle();
             float rotation = GlobalRotation;
             float angleDelta = _traverseSpeed * delta;
@@ -42,11 +42,10 @@ namespace SimpleTopDown.Scripts.Debug
             GlobalRotation = _angle;
         }
         
-        private void MoveTurretReticle()
+        private void MoveTurretReticle(Vector2 globalMouse)
         {
-            Vector2 localMouse = GetLocalMousePosition();
-            float distanceToMouse = localMouse.DistanceTo(Position);
-            distanceToMouse = Mathf.Lerp(_reticle.Offset.x, distanceToMouse, .8f);
+            float distanceToMouse = globalMouse.DistanceTo(GlobalPosition);
+            distanceToMouse = Mathf.Lerp(_reticle.Offset.x, distanceToMouse, _elevationSpeed);
             _reticle.Offset = new Vector2(distanceToMouse, 0);
         }
     }

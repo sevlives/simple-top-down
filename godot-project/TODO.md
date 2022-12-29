@@ -8,7 +8,7 @@
         - [ ] Consider adding cruise control, where tapping forward/ backward allows auto-speed in intervals of gears
             - [ ] If added allow setting to be changed
     - [x] Turret that follows mouse, but slowly
-    - [x] Add turret reticle (acts funny)
+    - [x] Add turret reticle
         - [x] Try using Lerp for changing `reticleOffset`
 - Enemies
     - [ ] Enemy movement
@@ -45,6 +45,7 @@
 - [x] Turret refuses to rotate when mouse is opposite of active tank rotation in a 180' arc
     - Made tank body and turret sibling nodes, thus decoupling parent / child relationship in rotation
 - [x] Turret reticle acts funny be instantly changing offset
+- [ ] Turret reticle needs to not rotate, always appear the same shape/ orientation
 
 ## Critically read code I don't understand
 - Ui.DebugOverlay
