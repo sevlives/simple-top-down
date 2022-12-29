@@ -6,10 +6,17 @@ namespace SimpleTopDown.Scripts.Menu
     public class PauseScreen : Control
     {
         private Node _game;
+        private Button _menuButton;
+        private Button _quitButton;
 
         public override void _Ready()
         {
             _game = GetParent();
+            _menuButton = GetNode<Button>   ("CenterContainer/GRatio/CenterContainer/GRatio/VBoxContainer/CenterContainer/GRatioH/VBoxContainer/Menu");
+            _quitButton = GetNode<Button>   ("CenterContainer/GRatio/CenterContainer/GRatio/VBoxContainer/CenterContainer/GRatioH/VBoxContainer/Quit");
+
+            _menuButton.Connect("pressed", this, nameof(OnMenuPressed));
+            _quitButton.Connect("pressed", this, nameof(OnQuitPressed));
 
             LoadCustomCursor("res://assets/cursor_center.png");
             Input.MouseMode = Input.MouseModeEnum.Confined;
@@ -30,6 +37,16 @@ namespace SimpleTopDown.Scripts.Menu
             Input.SetCustomMouseCursor(image, Input.CursorShape.Arrow, hotspot);
         }
         
+        private void OnMenuPressed()
+        {
+            GD.Print("Scene changed to Menu");
+        }
+
+        private void OnQuitPressed()
+        {
+            GetTree().Quit();
+        }
+
         private void ToggleScreen()
         {
             if (Input.IsActionJustPressed("ui_cancel"))
