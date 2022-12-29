@@ -17,6 +17,7 @@ namespace SimpleTopDown.Scripts
             this.Hide();
             this.PauseMode = PauseModeEnum.Process;
         }
+        
         public override void _UnhandledInput(InputEvent @event)
         {
             ToggleScreen();
@@ -28,6 +29,7 @@ namespace SimpleTopDown.Scripts
             Vector2 hotspot = new Vector2(image.GetWidth() / 2, image.GetHeight() / 2);
             Input.SetCustomMouseCursor(image, Input.CursorShape.Arrow, hotspot);
         }
+        
         private void ToggleScreen()
         {
             if (Input.IsActionJustPressed("ui_cancel"))

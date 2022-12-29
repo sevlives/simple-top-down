@@ -9,6 +9,7 @@ namespace SimpleTopDown.Scripts.Player.States
         private BaseState _currentState;
         private Dictionary<AnimationState, BaseState> _states;
         public string DebugState {get;set;}
+        
         public override void _Ready()
         {
             _states = new Dictionary<AnimationState, BaseState>()
@@ -17,6 +18,7 @@ namespace SimpleTopDown.Scripts.Player.States
                 [AnimationState.Move] = (BaseState)GetNode<Node>("Move"),
             };
         }
+        
         private void ChangeState(AnimationState newState)
         {
             if (_currentState != null)
@@ -28,6 +30,7 @@ namespace SimpleTopDown.Scripts.Player.States
             DebugState = newState.ToString();
             
         }
+        
         public void Init(PlayerController Player)
         {
             foreach (var child in GetChildren())
@@ -38,6 +41,7 @@ namespace SimpleTopDown.Scripts.Player.States
             }
             ChangeState(AnimationState.Idle);
         }
+        
         public void ManageInput(InputEvent @event)
         {
             AnimationState newState = _currentState.DoInput(@event);
@@ -46,6 +50,7 @@ namespace SimpleTopDown.Scripts.Player.States
                 ChangeState(newState);
             }
         }
+        
         public void ManagePhysics(float delta)
         {
             AnimationState newState = _currentState.DoPhysics(delta);

@@ -23,11 +23,13 @@ namespace SimpleTopDown.Scripts.Debug
 
             _arrow.Offset = _arrowOffset;
         }
+        
         public void DoPhysics(float delta)
         {
             MoveTurretArrow(delta);
             MoveTurretReticle();
         }
+        
         private void MoveTurretArrow(float delta)
         {
             Vector2 mousePosition = GetGlobalMousePosition();
@@ -39,6 +41,7 @@ namespace SimpleTopDown.Scripts.Debug
             _angle = Mathf.Clamp(_angle, rotation - angleDelta, rotation + angleDelta);
             GlobalRotation = _angle;
         }
+        
         private void MoveTurretReticle()
         {
             Vector2 localMouse = GetLocalMousePosition();

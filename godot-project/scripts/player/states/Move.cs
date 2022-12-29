@@ -8,6 +8,7 @@ namespace SimpleTopDown.Scripts.Player.States
         private Vector2 _rotateDirection;
         private const float _rotateSpeed = 1.8f;
         private const float _moveSpeed = 8000f;
+        
         public override AnimationState DoPhysics(float delta)
         {
             _rotateDirection.y = (

@@ -19,10 +19,12 @@ namespace SimpleTopDown.Scripts.Debug
             _overlay = GetNode<DebugOverlay>("DebugOverlay");
             _overlay.AddStat("Rotation", GetNode<Position2D>("TurretDirection"), "Angle", false);
         }
+        
         public override void _Process(float delta)
         {
             _overlay.UpdateOverlay();
         }
+        
         public override void _PhysicsProcess(float delta)
         {
             _turret.DoPhysics(delta);

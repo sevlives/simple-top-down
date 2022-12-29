@@ -21,12 +21,15 @@ namespace SimpleTopDown.Scripts.Player.States
         {
             // Player.AnimSprite.Play(animationName);
         }
+        
         public void Exit()
         {}
+        
         public virtual AnimationState DoInput(InputEvent @event)
         {
             return AnimationState.Null;
         }
+        
         public virtual AnimationState DoPhysics(float delta)
         {
             return AnimationState.Null;

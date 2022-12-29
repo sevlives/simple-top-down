@@ -7,11 +7,13 @@ namespace SimpleTopDown.Scripts.Debug
     {
         private Sprite _arrow;
         private Vector2 _arrowOffset = new Vector2(30, 0);
+        
         public override void _Ready()
         {
             _arrow = GetNode<Sprite>    ("Arrow");
             _arrow.Offset = _arrowOffset;
         }
+
         public override void _Process(float delta)
         {
             Vector2 mousePosition = GetGlobalMousePosition();

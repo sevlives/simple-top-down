@@ -29,6 +29,7 @@ namespace SimpleTopDown.Scripts.Player
             _states.Init(this);
             // Input.MouseMode = Input.MouseModeEnum.Confined;
         }
+
         // public override void _Process(float delta)
         // {
         // }
@@ -36,6 +37,7 @@ namespace SimpleTopDown.Scripts.Player
         {
             _states.ManageInput(@event);
         }
+        
         public override void _PhysicsProcess(float delta)
         {
             _states.ManagePhysics(delta);

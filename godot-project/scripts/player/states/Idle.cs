@@ -16,6 +16,7 @@ namespace SimpleTopDown.Scripts.Player.States
             }
             return AnimationState.Null;
         }
+        
         public override AnimationState DoPhysics(float delta)
         {
             return AnimationState.Null;

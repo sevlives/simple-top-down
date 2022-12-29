@@ -7,6 +7,7 @@ namespace SimpleTopDown.Scripts.Player
     {
         private Vector2 _mousePosition;
         private const float _rotateSpeed = 1.7f;
+        
         public void DoPhysics(float delta)
         {
             _mousePosition = GetGlobalMousePosition();
