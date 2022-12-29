@@ -7,25 +7,29 @@ namespace SimpleTopDown.Scripts.Player
 {
     public class TempController : KinematicBody2D
     {
-        private Vector2 _rotateDirection;
-        private const float _rotateSpeed = 1.6f;
-        private const float _moveSpeed = 6500f;
-        private TurretDirection _turret;
-        public Position2D Pivot;
+        private TurretController _turret;
+        public Position2D Pivot {get; private set;}
         private DebugOverlay _overlay;
         private MovementManager _moveManager;
 
         public override void _Ready()
         {
-            _turret = GetNode<TurretDirection>          ("TurretDirection");
+            _turret = GetNode<TurretController>          ("TurretDirection");
             Pivot = GetNode<Position2D>                 ("Pivot");
             _overlay = GetNode<DebugOverlay>            ("DebugOverlay");
             _moveManager = GetNode<MovementManager>     ("MovementManager");
             
             _overlay.AddStat("Rotation", GetNode<Position2D>("TurretDirection"), "Angle", false);
+            _overlay.AddStat("State", GetNode<MovementManager>("MovementManager"), "DebugState", false);
+
             _moveManager.Init(this);
         }
-        
+
+        public override void _UnhandledInput(InputEvent @event)
+        {
+            _moveManager.ManageInput(@event);
+        }
+
         public override void _Process(float delta)
         {
             _overlay.UpdateOverlay();

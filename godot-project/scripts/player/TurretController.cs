@@ -3,34 +3,50 @@ using System;
 
 namespace SimpleTopDown.Scripts.Player
 {
-    public class TurretController : Sprite
+    public class TurretController : Position2D
     {
-        private Vector2 _mousePosition;
-        private const float _rotateSpeed = 1.7f;
-        
-        public void DoPhysics(float delta)
+        private Sprite _arrow;
+        private Vector2 _arrowOffset = new Vector2(30, 0);
+        private Sprite _reticle;
+        private const float _traverseSpeed = 1.1f;
+        private const float _elevationSpeed = .3f;
+        private float _angle;
+        // debug property
+        public string Angle
         {
-            _mousePosition = GetGlobalMousePosition();
-            // Rotated() used due to incorret image importing, thus needs to be rotated 90' clockwise
-            Vector2 vector = (_mousePosition - GlobalPosition).Rotated(Mathf.Pi*.5f);
-            float angle = vector.Angle();
+            get => _angle.ToString();
+        }
+
+        public override void _Ready()
+        {
+            _arrow = GetNode<Sprite>        ("Arrow");
+            _reticle = GetNode<Sprite>      ("Reticle");
+
+            _arrow.Offset = _arrowOffset;
+        }
+        
+        public void DoPhysics(float delta, Vector2 globalMouse)
+        {
+            MoveTurretArrow(delta, globalMouse);
+            MoveTurretReticle(globalMouse);
+        }
+        
+        private void MoveTurretArrow(float delta, Vector2 globalMouse)
+        {
+            Vector2 vector = globalMouse - GlobalPosition;
+            _angle = vector.Angle();
             float rotation = GlobalRotation;
-            // amount of rotation allowed per frame
-            float angleDelta = _rotateSpeed * delta;
-            angle = Mathf.LerpAngle(rotation, angle, 1f);
-            angle = Mathf.Clamp(angle, rotation - angleDelta, rotation + angleDelta);
-            GlobalRotation = angle;
+            float angleDelta = _traverseSpeed * delta;
+            _angle = Mathf.LerpAngle(rotation, _angle, 1f);
+            _angle = Mathf.Clamp(_angle, rotation - angleDelta, rotation + angleDelta);
+            GlobalRotation = _angle;
+        }
+        
+        private void MoveTurretReticle(Vector2 globalMouse)
+        {
+            float distanceToMouse = globalMouse.DistanceTo(GlobalPosition);
+            distanceToMouse = Mathf.Lerp(_reticle.Offset.x, distanceToMouse, _elevationSpeed);
+            _reticle.Offset = new Vector2(distanceToMouse, 0);
         }
     }
 }
-//* ChatGPT provided this
-// Get the global mouse position
-// Vector2 mousePosition = GetViewport().GetMousePosition();
-
-// // Calculate the angle between the object and the mouse position
-// float angle = Mathf.Atan2(mousePosition.y - GlobalPosition.y, mousePosition.x - GlobalPosition.x);
-
-// // Rotate the object towards the mouse position
-// Transform2D rot = new Transform2D();
-// rot.Rotate(Mathf.Lerp(Rotation, angle, Mathf.Clamp(rotationSpeed * delta, 0, 1)));
-// Transform = rot * Transform;

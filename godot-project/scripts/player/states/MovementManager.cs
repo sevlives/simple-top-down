@@ -8,6 +8,7 @@ namespace SimpleTopDown.Scripts.Player.States
     {
         private BaseState _currentState;
         private Dictionary<MovementState, BaseState> _moveStates;
+        public string DebugState {get; set;}
 
         public override void _Ready()
         {
@@ -26,6 +27,7 @@ namespace SimpleTopDown.Scripts.Player.States
             }
             _currentState = _moveStates[newState];
             _currentState.Enter();
+            DebugState = newState.ToString();
         }
 
         public void Init(TempController player)

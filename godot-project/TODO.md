@@ -46,6 +46,7 @@
     - Made tank body and turret sibling nodes, thus decoupling parent / child relationship in rotation
 - [x] Turret reticle acts funny be instantly changing offset
 - [ ] Turret reticle needs to not rotate, always appear the same shape/ orientation
+- [ ] In Godot discord `@crazykid1148#8693` mentions unintend mouse movement matching fps because it was called in _Process() instead of _Input, check if similar issue
 
 ## Critically read code I don't understand
 - Ui.DebugOverlay
