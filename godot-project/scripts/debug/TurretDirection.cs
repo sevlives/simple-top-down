@@ -25,6 +25,11 @@ namespace SimpleTopDown.Scripts.Debug
         }
         public void DoPhysics(float delta)
         {
+            MoveTurretArrow(delta);
+            MoveTurretReticle();
+        }
+        private void MoveTurretArrow(float delta)
+        {
             Vector2 mousePosition = GetGlobalMousePosition();
             Vector2 vector = mousePosition - GlobalPosition;
             _angle = vector.Angle();
@@ -33,7 +38,9 @@ namespace SimpleTopDown.Scripts.Debug
             _angle = Mathf.LerpAngle(rotation, _angle, 1f);
             _angle = Mathf.Clamp(_angle, rotation - angleDelta, rotation + angleDelta);
             GlobalRotation = _angle;
-
+        }
+        private void MoveTurretReticle()
+        {
             Vector2 localMouse = GetLocalMousePosition();
             float distanceToMouse = localMouse.DistanceTo(Position);
             distanceToMouse = Mathf.Lerp(_reticle.Offset.x, distanceToMouse, .8f);
