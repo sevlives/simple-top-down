@@ -19,7 +19,7 @@
     - [ ] Characters can fire projectiles
     - [ ] Do damage
 - Weapons
-    - [ ] Silly string elemental
+    - [ ] Silly string flamethrower
         - [ ] Use Path2D node for collision with `Intersects()` and `Extends()`
         - [ ] Create Path2D with sin wave
     - [ ] Scythe 
