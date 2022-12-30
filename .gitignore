@@ -1,2 +1,5 @@
+# Godot specific ignores
+godot-project/.import/
+
 # Mono specific ignores
 godot-project/.mono/
